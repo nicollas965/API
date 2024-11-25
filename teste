@@ -1,0 +1,43 @@
+
+A seguir está uma abordagem para o desenvolvimento do projeto, dividida em etapas para facilitar a organização do trabalho:
+
+1. Configuração Inicial
+Back-end (API):
+
+Crie um projeto Minimal API utilizando o .NET SDK 8.0.
+Configure o Entity Framework com SQLite e crie o modelo Tarefa.
+csharp
+Copiar código
+public class Tarefa
+{
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public string Descricao { get; set; }
+    public string Categoria { get; set; }
+    public string Status { get; set; } = "Não iniciada";
+}
+Configure o DbContext:
+csharp
+Copiar código
+public class AppDbContext : DbContext
+{
+    public DbSet<Tarefa> Tarefas { get; set; }
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+}
+Adicione as migrações e crie o banco de dados.
+Front-end:
+
+Crie um projeto React com TypeScript:
+bash
+Copiar código
+npx create-react-app gerenciador-tarefas --template typescript
+Instale as dependências necessárias:
+bash
+Copiar código
+npm install axios react-router-dom
+2. API - Endpoints
+PATCH api/tarefa/alterar
+Atualiza o status da tarefa:
+
+csharp
+Copiar código
