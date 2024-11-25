@@ -10,3 +10,4 @@ public class Tarefa
     public string? CategoriaId { get; set; }
     public string? Status { get; set; } = "Não iniciada";
 }
+
