@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDataContext>(options =>
+    options.UseSqlite("Data Source=NICOLLAS_OLIVEIRA.db"));
+
 builder.Services.AddDbContext<AppDataContext>();
 
 var app = builder.Build();
@@ -10,7 +14,6 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Prova A1");
 
-//ENDPOINTS DE CATEGORIA
 //GET: http://localhost:5273/api/categoria/listar
 app.MapGet("/api/categoria/listar", ([FromServices] AppDataContext ctx) =>
 {

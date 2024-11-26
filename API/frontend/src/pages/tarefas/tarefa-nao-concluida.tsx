@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Tarefa } from ".. /Models/Tarefa";
+import { Tarefa } from "../../../../Models/Tarefa.cs"; 
 import { Link } from "react-router-dom";	
 import axios from "axios";
 

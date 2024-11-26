@@ -15,14 +15,12 @@ namespace API.Controllers
             _context = context;
         }
 
-        // GET: api/Categoria
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategorias()
         {
             return await _context.Categorias.ToListAsync();
         }
 
-        // GET: api/Categoria/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {
@@ -36,7 +34,6 @@ namespace API.Controllers
             return categoria;
         }
 
-        // POST: api/Categoria
         [HttpPost]
         public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
         {

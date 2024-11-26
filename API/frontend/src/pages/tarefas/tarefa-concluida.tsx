@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Tarefa } from 'Models'; 
+import { Tarefa } from "../../../../API/Models/Tarefa.cs"; 
 import { Link } from "react-router-dom";	
 import axios from "axios";
 
@@ -53,3 +53,4 @@ function TarefaListarConcluida() {
   );
 }
 export default TarefaListarConcluida;
+
